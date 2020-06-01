@@ -1,0 +1,30 @@
+<%= link_to 'All movies', movies_path  %>
+
+<h1>Movie</h1>
+
+
+<div class="media">
+  
+  <%= image_tag(@movie.image_url, alt: @movie.title) %>
+
+  <div class="media-body">
+    <h5 class="mt-0"><%= @movie.title %></h5>
+
+  <p><%= @movie.description %>
+
+  <ul class="list-group">
+  <li class="list-group-item">Director: <%= @movie.director %></li>
+  <li class="list-group-item">Release Date: <%= @movie.release_date %></li>
+  <li class="list-group-item">Runtime: <%= @movie.runtime_in_minutes %> minutes</li>
+</ul>
+    
+  </div>
+</div>
+
+<h3>Reviews</h3>
+
+<ul class="list-group">
+
+<%= render @reviews %>
+
+</ul>
